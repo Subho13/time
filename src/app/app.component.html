@@ -1,3 +1,22 @@
-<div id="container">
+<!-- <div id="container">
   <p id="display">{{ time }}</p>
+</div> -->
+
+<div id="root-container">
+  <div id="time-container">
+    <p id="time-display">{{ time }}</p>
+    <!-- <p id="time-display">{{ time.getHours() === 0 ? '00' : time.getHours() }}:
+      {{ time.getMinutes() === 0 ? '00' : time.getMinutes() }}:
+      {{ time.getSeconds() === 0? '00' : time.getSeconds() }}</p> -->
+  </div>
+  <div  id="input-container">
+    <!-- <input id="input-timezone"/>
+    <span class="highlight"></span>
+    <span class="bar"></span>
+    <label for="input-timezone">Timezone</label>
+    <button id="input-button">Search</button> -->
+    <select (change)="changeTimezone($event.target.value)">
+      <option *ngFor="let t of timezones">{{ t }}</option>
+    </select>
+  </div>
 </div>
