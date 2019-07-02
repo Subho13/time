@@ -14,11 +14,11 @@ export class WorldTimeService {
 
   getTimeZones(): Observable<string[]> {
     // return of(['a', 'b', 'c', 'd', 'e']);
-    return this._http.get<string[]>('http://worldtimeapi.org/api/timezone');
+    return this._http.get<string[]>('https://worldtimeapi.org/api/timezone');
   }
 
   getTime(): Observable<WorldTimeApiTime> {
-    return this._http.get<WorldTimeApiTime>('http://worldtimeapi.org/api/ip')
+    return this._http.get<WorldTimeApiTime>('https://worldtimeapi.org/api/ip')
       .pipe(
         tap( item => { console.log(item) } ),
       );
